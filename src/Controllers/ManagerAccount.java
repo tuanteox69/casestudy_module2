@@ -23,7 +23,7 @@ public class ManagerAccount {
     }
 
     public void menuLogin() {
-            System.out.println("---CHuong Trinh Quan ly Nhan Vien---");
+            System.out.println("---Chương Trình Quản lý nhân viên---");
             System.out.println("1. Đăng nhập");
             System.out.println("2. Đăng ký");
             System.out.println("Nhập lựa chọn của bạn: ");

@@ -35,7 +35,7 @@ public class ValidateGustAndStaff<E>{
     public int age(){
         try {
             int age = Integer.parseInt(scanner.nextLine());
-            if(age>=18 && age<99){
+            if(age>=18 && age<56){
                 return  age;
             }
             throw new Exception();
@@ -44,7 +44,7 @@ public class ValidateGustAndStaff<E>{
             System.out.println("Nhập sai định dạng vui lòng nhập định dạng ký tự số !");
             return age();
         } catch (Exception e){
-            System.out.println("Vui lòng nhập lại ! Tuổi không hợp lệ ! Tối thiểu là 18 tuổi");
+            System.out.println("Vui lòng nhập lại ! Tuổi không hợp lệ ! Tối thiểu là 18 tuổi!Tối đa là 55 tuổi ");
             return age();
         }
     }
@@ -54,7 +54,7 @@ public class ValidateGustAndStaff<E>{
             System.out.println("Nhập vào Tên");
             nameNV = scanner.nextLine();
             if (nameNV.equals("")) {
-                System.out.println("Không được bỏ trống !");
+                System.err.println("Không được bỏ trống !");
 
             } else {
                 if(checkName(nameNV)){

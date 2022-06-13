@@ -12,7 +12,7 @@ import java.util.Scanner;
 
 public class ManageNhanVien {
     ManagerAccount managerAccount = new ManagerAccount();
-    ReaderAndWrite<NhanVien> readerAndWriteNV = new ReaderAndWrite<>("C:\\module_2\\danhsachnhanvien.txt");
+    ReaderAndWrite<NhanVien> readerAndWriteNV = new ReaderAndWrite<>("danhsachnhanvien.txt");
 
     ArrayList<NhanVien> nhanViens = readerAndWriteNV.reader();
 
@@ -30,6 +30,7 @@ public class ManageNhanVien {
         System.out.println("7. Đọc từ file");
         System.out.println("8. Ghi vào file");
         System.out.println("9. Logout");
+        System.out.println("10. Exit");
         System.out.println("Nhập lựa chọn của bạn: ");
         try {
             int choice = Integer.parseInt(scanner.nextLine());
@@ -66,14 +67,16 @@ public class ManageNhanVien {
                 case 9:
                     ManagerAccount.account = null;
                     break;
+                case 10:
+                    System.exit(0);
             }
-            if (choice < 0 || choice > 10) {
-                System.out.println("Nhập qua chi so");
+            if (choice < 0 || choice >= 10) {
+                System.err.println("Nhập qua chi so");
             }
 
         }
         catch (Exception e ) {
-            System.out.println("Vui lòng nhập lại");
+            System.err.println("Vui lòng nhập lại");
         }
 
     }
@@ -86,6 +89,7 @@ public class ManageNhanVien {
             System.out.println("3. Sắp xếp theo tuổi & show");
             System.out.println("4. Show danh sách nhân viên");
             System.out.println("5. Logout");
+            System.out.println("6. Exit");
             System.out.println("Nhập lựa chọn của bạn: ");
             try {
                 int choice = Integer.parseInt(scanner.nextLine());
@@ -107,14 +111,15 @@ public class ManageNhanVien {
                     case 5:
                         ManagerAccount.account = null;
                         break;
-
+                    case 6:
+                        System.exit(0);
                 }
                 if (choice < 0 || choice >= 6) {
-                    System.out.println("Nhập qua chi so");
+                    System.err.println("Nhập qua chi so");
                 }
 
             } catch (Exception e) {
-                System.out.println("Vui lòng nhập lại");
+                System.err.println("Vui lòng nhập lại");
             }
     }
 
@@ -129,7 +134,7 @@ public class ManageNhanVien {
             }
         }
         if (check){
-            System.out.println("không tìm thấy id ");
+            System.err.println("không tìm thấy id ");
         }
     }
 
@@ -144,7 +149,7 @@ public class ManageNhanVien {
             }
         }
         if (check1){
-            System.out.println("không tìm thấy id ");
+            System.err.println("không tìm thấy id ");
         }
     }
 
@@ -169,10 +174,10 @@ public class ManageNhanVien {
                 }
                 readerAndWriteNV.write(nhanViens);
                 if (choice1 < 1||choice1>2) {
-                    System.out.println("Nhập quá chỉ số vui lòng nhập lại");
+                    System.err.println("Nhập quá chỉ số vui lòng nhập lại");
                 }
             }catch (NumberFormatException e){
-                System.out.println("Nhập lại lựa chọn");
+                System.err.println("Nhập lại lựa chọn");
             }
     }
 
@@ -200,10 +205,10 @@ public class ManageNhanVien {
                 break;
         }
         }catch (NumberFormatException e){
-            System.out.println("Nhập lại lựa chọn");
+            System.err.println("Nhập lại lựa chọn");
         }
         catch(Exception e){
-            System.out.println("Chọn 1 hoặc 2");
+            System.err.println("Chọn 1 hoặc 2");
 
         }
     }
