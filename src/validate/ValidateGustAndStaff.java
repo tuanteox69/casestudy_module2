@@ -1,6 +1,6 @@
-package IO;
+package validate;
 
-import Quanly_nhanvien.NhanVien;
+import Models.NhanVien;
 
 import java.util.List;
 import java.util.Scanner;
@@ -60,7 +60,7 @@ public class ValidateGustAndStaff<E>{
                 if(checkName(nameNV)){
                     return nameNV;
                 }else {
-                    System.out.println("Nhập tên không có số !");
+                    System.err.println("Nhập tên không có số !");
                 }
             }
         }
@@ -83,7 +83,7 @@ public class ValidateGustAndStaff<E>{
                 System.out.println("Nhập địa chỉ");
                 address= scanner.nextLine();
                 if (address.equals("")) {
-                    System.out.println("Không được bỏ trống !");
+                    System.err.println("Không được bỏ trống !");
                 } else return address;
             } catch (Exception e){
                 System.out.println(e);
@@ -100,10 +100,10 @@ public class ValidateGustAndStaff<E>{
             }
             throw new Exception();
         } catch (NumberFormatException e) {
-            System.out.println("Nhập sai định dạng !");
+            System.err.println("Nhập sai định dạng !");
             return Valiheso();
         } catch (Exception e) {
-            System.out.println("Nhập lại hệ số");
+            System.err.println("Nhập lại hệ số");
             return Valiheso();
         }
     } public int Valisobuoi() {
@@ -115,10 +115,10 @@ public class ValidateGustAndStaff<E>{
             }
             throw new Exception();
         } catch (NumberFormatException e) {
-            System.out.println("Nhập sai định dạng !");
+            System.err.println("Nhập sai định dạng !");
             return Valiheso();
         } catch (Exception e) {
-            System.out.println("Nhập lại so buoi");
+            System.err.println("Nhập lại so buoi");
             return Valiheso();
         }
     }
@@ -131,11 +131,11 @@ public class ValidateGustAndStaff<E>{
                 if (validateSDT.validate(str)){
                     return str;
                 } else {
-                    System.out.println("Nhập theo dạng 0xxxxxxxxxx");
+                    System.err.println("Nhập theo dạng 0xxxxxxxxxx");
                 }
 
             }catch (Exception e){
-                System.out.println("Nhập theo dạng 0xxxxxxxxx");
+                System.err.println("Nhập theo dạng 0xxxxxxxxx");
             }
         }
     }

@@ -1,4 +1,4 @@
-package Quanly_nhanvien;
+package Models;
 
 public class PartTime extends NhanVien {
     private int numberTime;

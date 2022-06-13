@@ -1,11 +1,11 @@
-package Controllers;
+package Manager;
 
 import IO.ReaderAndWrite;
-import IO.ValidateGustAndStaff;
-import Quanly_nhanvien.FullTime;
-import Quanly_nhanvien.NhanVien;
-import Quanly_nhanvien.PartTime;
-import Quanly_nhanvien.SortByAge;
+import validate.ValidateGustAndStaff;
+import Models.FullTime;
+import Models.NhanVien;
+import Models.PartTime;
+import IO.SortByAge;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -29,7 +29,7 @@ public class ManageNhanVien {
         System.out.println("6. Show danh sách nhân viên");
         System.out.println("7. Đọc từ file");
         System.out.println("8. Ghi vào file");
-        System.out.println("9. Logout");
+        System.out.println("9. Log out");
         System.out.println("10. Exit");
         System.out.println("Nhập lựa chọn của bạn: ");
         try {
@@ -88,7 +88,7 @@ public class ManageNhanVien {
             System.out.println("2. Show Lương");
             System.out.println("3. Sắp xếp theo tuổi & show");
             System.out.println("4. Show danh sách nhân viên");
-            System.out.println("5. Logout");
+            System.out.println("5. Log out");
             System.out.println("6. Exit");
             System.out.println("Nhập lựa chọn của bạn: ");
             try {
@@ -124,12 +124,13 @@ public class ManageNhanVien {
     }
 
     public void deleteNV() {
-        System.out.println("Nhập id muốn xóa");
+        System.out.println("Nhập id nhân viên muốn xóa");
         int id = Integer.parseInt(scanner.nextLine());
         boolean check = true ;
         for (int i = 0; i < nhanViens.size(); i++) {
             if (nhanViens.get(i).getIdNV() == id) {
                 nhanViens.remove(nhanViens.get(i));
+                System.out.println("Xóa thành công!");
                 check = false;
             }
         }

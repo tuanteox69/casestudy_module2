@@ -1,8 +1,8 @@
-package Controllers;
+package Manager;
 
 import IO.ReaderAndWrite;
-import Quanly_nhanvien.Account;
-import Quanly_nhanvien.NhanVien;
+import Models.Account;
+import Models.NhanVien;
 
 import java.util.ArrayList;
 import java.util.Scanner;

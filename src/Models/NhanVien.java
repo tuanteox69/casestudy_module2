@@ -1,4 +1,4 @@
-package Quanly_nhanvien;
+package Models;
 
 import java.io.Serializable;
 

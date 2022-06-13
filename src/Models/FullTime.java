@@ -1,4 +1,4 @@
-package Quanly_nhanvien;
+package Models;
 
 public class FullTime extends NhanVien {
     private int heSo;
